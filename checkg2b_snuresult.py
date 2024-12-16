@@ -24,7 +24,8 @@ def extract_table_data(html_content):
     # 공고
     # table = soup.find('table', {'class': 'table_list_tbidTbl'})
     # 개찰결과  table_list table_list_integrationTbl
-    table = soup.find('table', {'class': 'table_list_integrationTbl1'})
+    #table = soup.find('table', {'class': 'table_list_integrationTbl1'})
+    table = soup.find('table', {'class': 'table_list'})
     
     if not table:
         print("Table not found in the HTML.")
@@ -39,7 +40,6 @@ def extract_table_data(html_content):
         cells = [td.text.strip() for td in tr.find_all('td')]
         if cells:
             rows.append(cells)
-            print("\a")
             #print(cells)
             #공고번호, 공고명만 출력
             #print(cells[1] + ' ' + cells[3])
@@ -130,6 +130,8 @@ def main():
             old_hash, changed = check_for_changes(rows[0], old_hash)
                 
             if changed:
+                # beep sound!
+                print("\a")
                 for row in rows:
                 #    print(f'{row[1]}    {row[3]}    {row[9]}')
                     print(row)

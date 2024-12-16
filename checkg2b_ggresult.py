@@ -19,12 +19,15 @@ def fetch_html(url):
 # HTML에서 테이블을 추출하는 함수
 def extract_table_data(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
+    
+    #print (soup)
 
     # 테이블 요소를 찾기
     # 공고
     # table = soup.find('table', {'class': 'table_list_tbidTbl'})
     # 개찰결과  table_list table_list_integrationTbl
-    table = soup.find('table', {'class': 'table_list_integrationTbl1'})
+    #table = soup.find('table', {'class': 'table_list_integrationTbl1'})
+    table = soup.find('table', {'class': 'table_list'})
     
     if not table:
         print("Table not found in the HTML.")
@@ -110,7 +113,9 @@ def main():
         
         if html_content:
             # 테이블 데이터 추출
+            #print (html_content)
             headers, rows = extract_table_data(html_content)
+            
             
             #if (cnt == 0):
             #print(headers)
