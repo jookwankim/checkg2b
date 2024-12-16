@@ -85,10 +85,10 @@ def check_for_changes(rows, old_hash):
         gonggoNo = rows
     
     if new_hash != old_hash:
-        print(f"Content has changed on {dt} [{gonggoNo}]")
+        print(f"Content has changed on {dt} 공고번호 [{gonggoNo}]")
         return new_hash, True
     else:
-        print(f"No changes detected on {dt} [{gonggoNo}]")
+        print(f"No changes detected on {dt} 공고번호 [{gonggoNo}]")
         return old_hash, False        
 
 # 메인 함수
