@@ -80,7 +80,7 @@ def check_for_changes(rows, old_hash):
     gonggoNo = None
     
     if isinstance(rows, list):
-        gonggoNo = rows[1]
+        gonggoNo = rows[0]
     else:
         gonggoNo = rows
     
