@@ -80,7 +80,7 @@ def check_for_changes(rows, old_hash):
     gonggoNo = None
     
     if isinstance(rows, list):
-        gonggoNo = rows[1]
+        gonggoNo = rows[0]
     else:
         gonggoNo = rows
     
@@ -93,8 +93,8 @@ def check_for_changes(rows, old_hash):
 
 # 메인 함수
 def main():
-    #2025년~2027년 서울대학교 IT서비스 통합 운영 유지관리 사업
-    url = 'https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?bidno=20241031974'  # 여기에 웹페이지 URL을 입력
+    #2025~2026년 모바일 신분증 시스템 운영 및 유지관리 용역
+    url = 'https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?bidno=20241110129'  # 여기에 웹페이지 URL을 입력
     #https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?searchType=1&bidSearchType=2&taskClCds=5&bidNm=%B0%E6%B1%E2%B5%B5&searchDtType=2&fromBidDt=&toBidDt=&fromOpenBidDt=2024%2F12%2F10&toOpenBidDt=2025%2F01%2F09&radOrgan=2&instNm=%B0%E6%B1%E2%B5%B5&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=30
     # 용역, 국민건강보험공단, ~2024/10/31
     #url = 'https://www.g2b.go.kr:8101/ep/tbid/tbidList.do?searchType=1&bidSearchType=1&taskClCds=5&bidNm=&searchDtType=1&fromBidDt=2024%2F09%2F23&toBidDt=2024%2F10%2F31&setMonth1=1&fromOpenBidDt=&toOpenBidDt=&radOrgan=2&instNm=%B1%B9%B9%CE%B0%C7%B0%AD%BA%B8%C7%E8%B0%F8%B4%DC&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=10'

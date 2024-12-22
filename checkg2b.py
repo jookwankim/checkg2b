@@ -22,9 +22,10 @@ def extract_table_data(html_content):
 
     # 테이블 요소를 찾기
     # 공고
-    # table = soup.find('table', {'class': 'table_list_tbidTbl'})
+    table = soup.find('table', {'class': 'table_list'})
     # 개찰결과  table_list table_list_integrationTbl
-    table = soup.find('table', {'class': 'table_list_integrationTbl'})
+    #table = soup.find('table', {'class': 'table_list_integrationTbl'})
+    
     
     if not table:
         print("Table not found in the HTML.")
@@ -87,11 +88,11 @@ def check_for_changes(rows, old_hash):
 
 # 메인 함수
 def main():
-    url = 'https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?searchType=1&bidSearchType=2&taskClCds=5&bidNm=%B0%E6%B1%E2%B5%B5&searchDtType=2&fromBidDt=&toBidDt=&fromOpenBidDt=2024%2F12%2F10&toOpenBidDt=2025%2F01%2F09&radOrgan=2&instNm=%B0%E6%B1%E2%B5%B5&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=30'  # 여기에 웹페이지 URL을 입력
+    #url = 'https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?searchType=1&bidSearchType=2&taskClCds=5&bidNm=%B0%E6%B1%E2%B5%B5&searchDtType=2&fromBidDt=&toBidDt=&fromOpenBidDt=2024%2F12%2F10&toOpenBidDt=2025%2F01%2F09&radOrgan=2&instNm=%B0%E6%B1%E2%B5%B5&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=30'  # 여기에 웹페이지 URL을 입력
     # 20241211 경기도 개찰결과
     #https://www.g2b.go.kr:8101/ep/result/listPageIntegrationBidResult.do?searchType=1&bidSearchType=2&taskClCds=5&bidNm=%B0%E6%B1%E2%B5%B5&searchDtType=2&fromBidDt=&toBidDt=&fromOpenBidDt=2024%2F12%2F10&toOpenBidDt=2025%2F01%2F09&radOrgan=2&instNm=%B0%E6%B1%E2%B5%B5&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=30
     # 용역, 국민건강보험공단, ~2024/10/31
-    #url = 'https://www.g2b.go.kr:8101/ep/tbid/tbidList.do?searchType=1&bidSearchType=1&taskClCds=5&bidNm=&searchDtType=1&fromBidDt=2024%2F09%2F23&toBidDt=2024%2F10%2F31&setMonth1=1&fromOpenBidDt=&toOpenBidDt=&radOrgan=2&instNm=%B1%B9%B9%CE%B0%C7%B0%AD%BA%B8%C7%E8%B0%F8%B4%DC&instSearchRangeType=1&refNo=&area=&areaNm=&strArea=&orgArea=&industry=&industryCd=&upBudget=&downBudget=&budgetCompare=&detailPrdnmNo=&detailPrdnm=&procmntReqNo=&intbidYn=&regYn=Y&recordCountPerPage=10'
+    url = 'https://www.g2b.go.kr:8101/ep/tbid/tbidList.do?taskClCds=&bidNm=%C1%A4%BD%C5&searchDtType=1&fromBidDt=2024/11/23&toBidDt=2024/12/23&fromOpenBidDt=&toOpenBidDt=&radOrgan=1&instNm=%B1%B9%B9%CE%B0%C7%B0%AD%BA%B8%C7%E8%B0%F8%B4%DC&area=&regYn=Y&bidSearchType=1&searchType=1'
     #output_file = 'D:/temp/bid_table_data.xlsx'
     interval = 300
     
